@@ -1,0 +1,4 @@
+{
+  "presets": ["backpack"],
+  "plugins": ["@babel/plugin-proposal-optional-chaining"]
+}

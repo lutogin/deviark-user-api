@@ -1,0 +1,25 @@
+require('dotenv-safe').config();
+
+const {
+  APP_PROTOCOL,
+  APP_HOST,
+  APP_PORT,
+  MONGO_USERNAME,
+  MONGO_PASSWORD,
+  MONGO_PORT,
+  MONGO_HOST,
+  MONGO_DB_NAME,
+} = process.env;
+
+const MONGO_CONNECTION_URL = `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB_NAME}`;
+
+module.exports = {
+  APP_PROTOCOL,
+  APP_HOST,
+  APP_PORT,
+  MONGO_USERNAME,
+  MONGO_PASSWORD,
+  MONGO_PORT,
+  MONGO_DB_NAME,
+  MONGO_CONNECTION_URL,
+};

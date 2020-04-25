@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  deviark-api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: "deviark-api"
+    depends_on:
+      - deviark-mongodb
+    links:
+      - deviark-mongodb
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    env_file:
+      - .env
+    environment:
+      - MONGO_HOST=deviark-mongodb
+    volumes:
+      - .:/home/app
+      - /home/app/node_modules
+    restart: unless-stopped
+
+
+  deviark-mongodb:
+    image: mongo
+    container_name: "deviark-mongodb"
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_DB_NAME}
+    ports:
+      - "27017:27017"
+    volumes:
+      - deviark_mongodb_container:/data/db
+
+volumes:
+  deviark_mongodb_container:

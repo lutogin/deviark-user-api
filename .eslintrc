@@ -1,0 +1,19 @@
+{
+  "extends": ["airbnb/base", "prettier"],
+  "parser": "babel-eslint",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "function-paren-newline": 0,
+    "comma-dangle": 0,
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-await-in-loop": 0,
+    "max-len": 0
+  },
+  "env": {
+    "jest": true
+  },
+  "settings": {}
+}
