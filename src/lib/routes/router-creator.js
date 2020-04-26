@@ -12,6 +12,7 @@ class RouterCreator {
     this.get = (path, controllerMethodName) => ({ method: 'get', path, controllerMethodName });
     this.post = (path, controllerMethodName) => ({ method: 'post', path, controllerMethodName });
     this.put = (path, controllerMethodName) => ({ method: 'put', path, controllerMethodName });
+    this.patch = (path, controllerMethodName) => ({ method: 'patch', path, controllerMethodName });
     this.delete = (path, controllerMethodName) => ({ method: 'delete', path, controllerMethodName });
   }
 

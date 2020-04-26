@@ -1,11 +1,11 @@
 const UserController = require('./users.controller');
-const makeControllerValidation = require('../../../lib/decorators/controller-validation');
+const joinValidation = require('../../../lib/decorators/join-validation');
 const requestRules = require('./validations/validation.request');
 
 const validationMethods = {
   requestRules,
 };
 
-const currentUsersController = new (makeControllerValidation(validationMethods)(UserController))();
+const currentUsersController = new (joinValidation(validationMethods)(UserController))();
 
 module.exports = currentUsersController;

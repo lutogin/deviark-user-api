@@ -1,6 +1,6 @@
 const Joi = require('@hapi/joi');
 const userController = require('../users.controller');
-const schema = require('../configs/joi-schemas');
+const schema = require('./configs/joi-schemas');
 
 const createRequestValidation = Joi.object({
   name: schema.name,

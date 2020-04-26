@@ -13,7 +13,6 @@ class UsersService {
   async createUser(userData) {
     const { password } = userData;
     const hashPassword = await this.hashPwd(password);
-    // TODO: fix return pwd.
     const {
       _id,
       name,

@@ -20,8 +20,6 @@ services:
     volumes:
       - .:/home/app
       - /home/app/node_modules
-    restart: unless-stopped
-
 
   deviark-mongodb:
     image: mongo
